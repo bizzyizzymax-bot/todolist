@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(160deg, #ce9025, #932ff1);
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  height: fit-content;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SIDEBAR */
+
+.main {
+  margin: 50px;
+  width: 1000px;
+  min-height: 700px;
+  height: fit-content;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.main button {
+  cursor: pointer;
+}
+
+.sidebar {
+  width: 30%;
+  height: auto;
+  background-color: rgb(29, 30, 40);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.tasks-content {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+}
+
+.sidebar .box {
+  height: 100%;
+  width: 20px;
+  background-color: rgb(29, 30, 40);
+}
+
+.sidebar .side-content {
+  min-height: 100%;
+  width: 100%;
+  background-color: rgb(29, 30, 40);
+  border-radius: 20px;
+  padding: 20px 20px 10px;
+}
+
+.actual-content {
+  width: 100%;
+  max-height: 710px;
+  overflow-y: auto;
+}
+
+.side-content .title {
+  font-size: 40px;
+  margin-bottom: 15px;
+  font-weight: 400;
+}
+
+.side-content hr {
+  margin-bottom: 20px;
+}
+
+.add-project {
+  display: flex;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: 400;
+  align-items: center;
+}
+
+.add-project button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  transition: all 0.5s ease;
+}
+
+.add-project button:hover {
+  rotate: 360deg;
+}
+
+.add-project button svg {
+  fill: white;
+  width: 25px;
+}
+
+.add-task {
+  display: flex;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  font-weight: 400;
+  align-items: center;
+}
+
+.add-task button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  transition: all 0.5s ease;
+}
+
+.add-task button:hover {
+  rotate: 360deg;
+}
+
+.add-task button svg {
+  fill: white;
+  width: 25px;
+}
+
+.project {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  transition: all 0.05s ease-in;
+  width: 100%;
+  margin-bottom: 15px;
+  justify-content: space-between;
+}
+
+.folderandname {
+  display: flex;
+  align-items: center;
+}
+
+.projectname {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+}
+
+.project svg {
+  fill: rgb(225, 225, 225);
+  width: 25px;
+  margin-right: 10px;
+}
+
+.project:hover {
+  border: 1px solid rgb(141, 141, 141);
+  padding: 3px;
+}
+
+.project:hover .delete-project {
+  display: block;
+}
+
+.project .delete-project {
+  margin-left: 40px;
+  background: none;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+  display: none;
+}
+
+.add-task-box {
+  width: 220px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.add-task-box input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(61, 59, 72);
+  font-size: 0.9em;
+  color: white;
+  outline: none;
+  transition: all 0.05s ease-in;
+  padding: 5px;
+  text-decoration-color: white;
+}
+
+.add-task-box input:focus {
+  border: 1px solid white;
+}
+
+.add-task-box select {
+  margin-bottom: 15px;
+  background: none;
+  border: none;
+  color: white;
+  border: 1px solid rgb(66, 66, 78);
+  border-radius: 10px;
+  outline: none;
+  padding: 5px;
+}
+
+.add-task-box button {
+  background-color: rgb(49, 49, 61);
+  border: none;
+  border-radius: 1px;
+  color: white;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  font-size: (0.5rem, 1em, 1rem);
+  transition: all 0.1s ease-in;
+}
+
+.add-task-box button:hover {
+  background-color: rgb(69, 68, 81);
+}
+
+.add-project-box {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-project-box input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(61, 59, 72);
+  font-size: 0.9em;
+  color: white;
+  outline: none;
+  transition: all 0.05s ease-in;
+  padding: 5px;
+}
+
+.add-project-box input:focus {
+  border: 1px solid white;
+}
+
+.add-project-box button {
+  background-color: rgb(49, 49, 61);
+  border: none;
+  border-radius: 1px;
+  color: white;
+  width: 100%;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: all 0.1s ease-in;
+}
+
+.add-project-box button:hover {
+  background-color: rgb(69, 68, 81);
+}
+
+/* TASKS MAIN */
+
+.tasks-content {
+  display: flex;
+  padding: 40px;
+  flex-direction: column;
+  color: rgb(0, 0, 0);
+  width: 100%;
+}
+
+#status-text {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.task-box {
+  width: 100%;
+  max-height: 600px;
+  padding: 10px;
+  height: fit-content;
+  overflow-y: auto;
+}
+
+.task-item {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+  padding: 10px;
+}
+
+* {
+}
+
+.first {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.first * {
+  font-size: 1.2em;
+}
+
+.titleandcheck {
+  align-items: center;
+  display: flex;
+}
+
+.titleandcheck p {
+  width: fit-content;
+}
+
+.titleandcheck button {
+  background: none;
+  border: 2px solid gray;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 7px;
+  transition: all 0.1s ease-in;
+}
+
+.titleandcheck .title {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.titleandcheck button:hover {
+  border-color: rgb(34, 34, 34);
+}
+
+.priorityanddate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 250px;
+}
+
+.priorityanddate button {
+  background: none;
+  border: none;
+  transition: all 0.1s ease-in;
+  height: 40px;
+  display: flex;
+  align-content: center;
+}
+
+.trash-open {
+  display: none;
+}
+
+.priorityanddate button:hover .trash-open {
+  display: block;
+}
+
+.priorityanddate button:hover .trash-closed {
+  display: none;
+}
+
+.priorityanddate button svg {
+  width: 30px;
+  fill: rgb(34, 34, 34);
+}
+
+.priority-high {
+  background-color: rgb(224, 26, 26);
+  width: 60px;
+  height: 30px;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.priority-medium {
+  background-color: rgb(224, 161, 26);
+  width: 80px;
+  height: 30px;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  font-size: 1em;
+}
+.priority-low {
+  background-color: rgb(49, 176, 56);
+  width: 60px;
+  height: 30px;
+  align-content: center;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+.description {
+  font-size: 1.2em;
+  font-weight: 300;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  font-weight: 300;
+}

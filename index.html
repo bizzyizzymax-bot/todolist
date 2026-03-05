@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todolist</title>
+    <link rel="stylesheet" href="/src/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="sidebar">
+        <div class="side-content">
+          <div class="actual-content">
+            <p class="title">ToDo</p>
+            <hr />
+            <div class="add-task">
+              <p>Add Task</p>
+              <button id="add-task-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>plus</title>
+                  <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="add-task-box" style="display: none">
+              <input type="text" id="task-title" placeholder="Task Title" />
+              <input
+                type="text"
+                id="task-description"
+                placeholder="Task Description"
+              />
+              <select name="priority" id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+              <input type="date" id="due-date" />
+              <select name="project" id="project">
+                <option value="demo">Demo</option>
+              </select>
+              <button id="submit-task-btn">Submit</button>
+            </div>
+            <hr />
+            <div class="add-project">
+              <p>Add Project</p>
+              <button id="add-project-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <title>plus</title>
+                  <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+              </button>
+            </div>
+            <div class="add-project-box" style="display: none">
+              <input type="text" id="project-name" placeholder="Project Name" />
+              <button id="submit-project-btn">Submit</button>
+            </div>
+            <hr />
+            <div class="projects"></div>
+          </div>
+        </div>
+        <div class="box"></div>
+      </div>
+
+      <div></div>
+
+      <div class="tasks-content">
+        <p id="status-text">Demo</p>
+        <div class="task-box">
+          <div class="task-item">
+            <div class="first">
+              <div class="titleandcheck">
+                <button></button>
+                <p class="title">Demo Task</p>
+              </div>
+
+              <div class="priorityanddate">
+                <p class="priority-high">High</p>
+                <p>Feb 24</p>
+                <button>
+                  <svg
+                    class="trash-closed"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <title>delete</title>
+                    <path
+                      d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"
+                    />
+                  </svg>
+                  <svg
+                    class="trash-open"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                  >
+                    <title>delete-empty</title>
+                    <path
+                      d="M20.37,8.91L19.37,10.64L7.24,3.64L8.24,1.91L11.28,3.66L12.64,3.29L16.97,5.79L17.34,7.16L20.37,8.91M6,19V7H11.07L18,11V19A2,2 0 0,1 16,21H8A2,2 0 0,1 6,19Z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="second">
+              <p class="description">Description:</p>
+              <p class="description-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+                voluptate, doloremque, quisquam, dicta deleniti corporis
+                asperiores consequatur sed cumque. Voluptas, voluptate.
+                Voluptas, voluptate. Voluptas, voluptate. Voluptas, voluptate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
