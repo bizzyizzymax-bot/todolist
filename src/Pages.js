@@ -1,4 +1,5 @@
 import { ProjectList } from "./ProjectClass";
+import { saveProjectsToLocalStorage } from "./ProjectClass";
 const taskbox = document.querySelector(".task-box");
 
 const statusPageText = document.getElementById("status-text");
@@ -88,11 +89,16 @@ export function pages(project) {
           const taskItem = deleteTaskBtn.parentNode.parentNode.parentNode;
           currentPage.removeTask(task);
           taskItem.remove();
+          saveProjectsToLocalStorage();
         });
 
         const comepletedTaskBtn = titleandcheck.querySelector("button");
 
-        let checked = false;
+        let checked = !!task.completed;
+        if (checked) {
+          const taskTitle = titleandcheck.querySelector("p");
+          taskTitle.style.textDecoration = "line-through";
+        }
 
         comepletedTaskBtn.addEventListener("click", () => {
           const taskTitle = titleandcheck.querySelector("p");
@@ -100,9 +106,12 @@ export function pages(project) {
 
           if (checked) {
             taskTitle.style.textDecoration = "line-through";
+            task.completed = true;
           } else {
             taskTitle.style.textDecoration = "none";
+            task.completed = false;
           }
+          saveProjectsToLocalStorage();
         });
       }
     }
