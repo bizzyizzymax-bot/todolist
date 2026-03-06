@@ -6,8 +6,11 @@ https://bizzyizzymax-bot.github.io/todolist/
 
 ## Features:
 -Create and delete tasks and projects
+
 -Give tasks a name, descripttion, priority type, and due date
+
 -Check off tasks
+
 -Auto Save so that the user tasks and projects are saved using Javascript's localStorage function.
 
 
